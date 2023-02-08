@@ -21,13 +21,6 @@ export async function getStaticProps({ params }): Promise<{ props: { page: any }
     })
     .toPromise();
 
-  const a = await builder
-  .get('page', {
-    userAttributes: {
-      urlPath: '/' + (params?.page?.join('/') || ''),
-    },
-  });
-
   return {
     props: {
       page: page || null,
